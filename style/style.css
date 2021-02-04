@@ -4,6 +4,7 @@ html,
 body {
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 html {
@@ -23,7 +24,7 @@ h1,
 h2,
 h3 {
     font-family: 'Special Elite', cursive;
-    color: #8C4830;
+    color: #8c4830;
 }
 
 p,
@@ -65,8 +66,9 @@ header {
 }
 
 body>* {
-    background-color: #2e4751e7;
-    padding: 1%;
+    background: rgb(55, 97, 112);
+    background: radial-gradient(circle, rgba(55, 97, 112, 1) 0%, rgba(46, 71, 81, 1) 100%);
+    padding: 2%;
 }
 
 main,
@@ -75,7 +77,8 @@ nav,
 article,
 aside,
 footer,
-section {
+section,
+figure {
     padding: 2%;
     border-radius: 3rem;
 }
@@ -87,7 +90,9 @@ h1 {
 
 .header--full-width {
     width: 100vw;
-    position: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 header i {
@@ -102,6 +107,9 @@ nav {
     height: 50px;
     flex: 100%;
     display: flex;
+    background: rgb(112, 42, 18);
+    background: linear-gradient(0deg, rgba(112, 42, 18, 1) 0%, rgba(189, 78, 38, 1) 100%);
+    box-shadow: 2.5px 0px 6px rgba(35, 32, 77, 0.836);
 }
 
 nav ul {
@@ -142,10 +150,12 @@ nav .active-link {
 /* || main layout */
 
 main {
-    width: 70%;
+    width: 75%;
     margin-top: 2rem;
     display: flex;
     justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 article,
@@ -153,26 +163,101 @@ section {
     flex: 4;
 }
 
+article h2 {
+    /* position: relative;
+    top: -15vh; */
+    font-size: 7em;
+    line-height: 0.01em;
+}
+
+article {
+    overflow-y: scroll;
+    max-height: 50vh;
+    background-color: rgba(34, 60, 70, 0.514);
+}
+
 section {
     padding: 2rem 4rem;
+    margin-top: 2rem;
+}
+
+section a img {
+    border-radius: 10%;
+    padding-right: 4em;
+    margin-top: 2.5em;
 }
 
 aside {
     flex: 1;
     margin-left: 10px;
     padding: 1%;
-    background-color: #a68953dc;
+    background: rgb(228, 189, 115);
+    background: radial-gradient(circle, rgba(228, 189, 115, 1) 0%, rgba(166, 137, 83, 1) 100%);
+    box-shadow: 2.5px 0px 6px rgba(35, 32, 77, 0.836);
+    overflow-y: auto;
+    max-height: 50vh;
+    position: relative;
+    left: 7vw;
+}
+
+figure {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* margin: 0;
+    padding: 0; */
+}
+
+figure img {
+    width: 15vw;
+    border-radius: 100%;
+    box-shadow: 2.5px 0px 6px rgba(35, 32, 77, 0.836);
+    /* float: left; */
+}
+
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 1.5em;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    background: #704206;
+    border-radius: 10px;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: rgb(211, 195, 142);
+    border-radius: 10px;
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: rgb(233, 228, 203);
+}
+
+aside {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 aside h2 {
     text-shadow: 0.1rem 0.1rem 0.3rem #3d2014;
-    font-size: 2.6rem;
+    font-size: 4rem;
     font-family: 'Roboto Condensed', sans-serif;
 }
 
 aside a {
-    display: block;
-    float: left;
     width: 50%;
 }
 
@@ -185,9 +270,67 @@ aside img {
 
 footer {
     margin-top: 2rem;
+    width: 100vw;
 }
 
 footer a {
     text-decoration: none;
     color: #8C4830;
+}
+
+
+/* utility classes */
+
+.float {
+    float: left;
+}
+
+
+/* .clear {
+    clear: both;
+} */
+
+.box {
+    min-width: 100px;
+    min-height: 100px;
+    background-color: #b85d12;
+    border-radius: 10%;
+    padding: 1em;
+    margin: 1em;
+    position: relative;
+}
+
+
+/* colors */
+
+.blue {
+    background-color: rgb(79, 110, 139);
+}
+
+.beige {
+    background-color: rgb(221, 191, 153);
+}
+
+
+/* z-index's */
+
+.zindex10 {
+    z-index: 10;
+}
+
+.zindex20 {
+    z-index: 20;
+    top: -50px;
+}
+
+.zindex30 {
+    z-index: 30;
+    top: -100px;
+}
+
+
+/* opacity */
+
+.opacity {
+    opacity: 0.8;
 }
